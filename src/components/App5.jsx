@@ -1,28 +1,30 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 export default function App5() {
   const [todos, setTodos] = useState([]);
   const [task, setTask] = useState();
   const handleSubmit = () => {
     setTodos([...todos, task]);
-    setTask("");
   };
-  const handleDelete=(task)=>{
-    setTodos(todos.filter((todo)=>task!==todo))
-  }
+  const handleDelete = (task) => {
+    setTodos(todos.filter((value) => value !== task));
+  };
   return (
-    <p>
-      <input
-        type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
-        placeholder="Enter Task"
-      ></input>
-      <button onClick={handleSubmit}>Submit</button>
-      <hr />
-      {todos.map((todo, index) => (
-        <li key={index}>{todo}-<button onClick={()=>handleDelete(task)}>Delete</button></li>
-      ))}
-    </p>
+    <div>
+      <h3>This is App5</h3>
+      <p>
+        <input
+          type="text"
+          onChange={(e) => setTask(e.target.value)}
+          placeholder="Enter task"
+        ></input>
+        <button onClick={handleSubmit}>Submit</button>
+        <hr></hr>
+        {todos.map((value, index) => (
+          <li key={index}>
+            {value}-<button onClick={() => handleDelete(value)}>Delete</button>
+          </li>
+        ))}
+      </p>
+    </div>
   );
 }
