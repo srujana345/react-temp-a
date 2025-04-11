@@ -20,6 +20,8 @@ import App16 from "./components/App16";
 import App17 from "./components/App17";
 import App18 from "./components/App18";
 import App19 from "./components/App19";
+import App20 from "./components/App20";
+import App21 from "./components/App21";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
          <Link to="app17" className="App-links">App17</Link>
          <Link to="app18" className="App-links">App18</Link>
          <Link to="app19" className="App-links">App19</Link>
+         <Link to="app20" className="App-links">App20</Link>
+         <Link to="app21" className="App-links">App21</Link>
 
       </div>
       <hr></hr>
@@ -69,6 +73,8 @@ function App() {
            <Route path="app17" element={<App17 />} />
            <Route path="app18" element={<App18 />} />
            <Route path="app19" element={<App19 />} />
+           <Route path="app20" element={<App20 />} />
+           <Route path="app21" element={<App21 />} />
         </Routes>
       </div>
     </BrowserRouter>
